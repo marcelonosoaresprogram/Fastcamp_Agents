@@ -1,0 +1,49 @@
+assign_task:
+  description: >
+    Analyze the topic "{topic}" and the context "{context}" to plan the workflow.
+    Assign responsibilities to each agent and define the logical order of execution to produce a cohesive educational article.
+  expected_output: >
+    A structured task plan that explains which agent will do what and in which order, 
+    focused on producing a long-form article that deeply explores the topic "{topic}" in the context of "{context}".
+  agent: admin
+
+collect_urls:
+  description: >
+    Search for high-quality websites, papers, or blog posts that contain detailed and relevant educational content 
+    about "{topic}", with a focus on depth and clarity for readers learning in the context of "{context}".
+  expected_output: >
+    A list of 5 to 10 reliable URLs containing comprehensive information suitable for building a solid educational article about "{topic}".
+  agent: url_collector
+
+scrape_content:
+  description: >
+    Extract clean, readable, and structured textual content from each of the provided URLs.
+    Focus on paragraphs that offer conceptual clarity, technical depth, or well-explained examples related to "{topic}" in the context of "{context}".
+  expected_output: >
+    A consolidated textual document from each source with clear formatting and source attribution, ready to be integrated into an article.
+  agent: content_scraper
+
+research_task:
+  description: >
+    Conduct a comprehensive research effort on "{topic}", emphasizing not only factual accuracy but also clarity and depth.
+    The goal is to produce continuous, article-style paragraphs that teach the concepts in a structured and engaging way, within the context: "{context}".
+  expected_output: >
+    Several paragraphs of well-structured, interconnected content exploring "{topic}" in depth, with no bullet points or itemized lists.
+  agent: researcher
+
+enhance_task:
+  description: >
+    Improve the researched and extracted content to enhance its clarity, flow, and pedagogical effectiveness.
+    The resulting output should be cohesive, continuous, and resemble a chapter from an educational book—engaging, context-aware, and free of fragmented sections.
+  expected_output: >
+    A refined and unified body of text that explains "{topic}" deeply and fluidly within the context: "{context}", prepared for final editing.
+  agent: enhancer
+
+finalize_task:
+  description: >
+    Review and finalize the enhanced content. Improve transitions, ensure coherence, polish language, and convert the material into a markdown article.
+    The final output should read like a professional educational article, with rich textual continuity.
+  expected_output: >
+    A complete markdown document that teaches "{topic}" in the context of "{context}", written as a long-form article.
+    Use markdown headings, but avoid bullet points or code blocks. Prioritize flow, depth, and readability.
+  agent: editor
