@@ -33,7 +33,7 @@ class BestTeacher:
     @agent
     def admin(self) -> Agent:
         """Agente responsável por planejar e delegar as tarefas"""
-        return Agent(config=self.agents_config['admin'], verbose=True, allow_delegation=True)
+        return Agent(config=self.agents_config['admin'], verbose=True,)
 
     @agent
     def url_collector(self) -> Agent:
