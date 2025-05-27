@@ -1,0 +1,1 @@
+Mensagem de lembrete enviada com sucesso para o paciente com chatId "556285670164": "Olá Marcelo Soares! Lembrete: você tem uma consulta marcada para amanhã, dia 27 de maio de 2025. Não esqueça!"

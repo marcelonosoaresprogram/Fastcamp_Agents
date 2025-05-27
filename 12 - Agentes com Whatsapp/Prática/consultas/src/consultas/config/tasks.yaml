@@ -1,0 +1,13 @@
+arquivo_task:
+  description: >
+    Ler o arquivo CSV de consultas, identificar todos os pacientes que têm consulta marcada para amanhã e preparar UMA mensagem personalizada de lembrete para cada um, sem duplicidade. Para cada paciente encontrado, envie para o agente "mensagem" um dicionário com: texto da mensagem, chatId (exatamente como no CSV).
+  expected_output: >
+    Uma lista de dicionários, cada um contendo: {"chatId": "chatId", "text": "mensagem personalizada"} para cada paciente com consulta amanhã, sem duplicidade.
+  agent: arquivo
+
+mensagem_task:
+  description: >
+    Receber do agente "arquivo" a lista de pacientes (cada um com texto da mensagem e chatId) e, para cada paciente, enviar UMA requisição para a URL usando a ferramenta de request, garantindo que cada paciente receba apenas um lembrete. Use exatamente o chatId do CSV.
+  expected_output: >
+    Confirmação do envio das mensagens para todos os pacientes com consulta marcada para amanhã, sem duplicidade.
+  agent: mensagem
